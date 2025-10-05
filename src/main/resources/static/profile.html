@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- CSS Link -->
+     <link rel="stylesheet" type="text/css" href="/css/profile.css">
+</head>
+
+<body>
+    <!--Lamp for the dark mode-->
+    <div class="themeToggle">
+        <img src="/images/lamp-dark.png" id="lampToggle" alt="Toggle Theme" onclick="toggleTheme()">
+    </div>
+    
+    <div class="backHome">
+        <button id="backToHome" onclick="backHome()">Back</button>
+    </div>
+    
+    <div id="profileContainer">
+        <!-- Profile section on the left with the profile breakdown -->
+        <div id="profileCard">
+            <!-- Stores the image/avatar on the user's profile -->
+            <div id="profileImageContainer">
+                <img src="/images/darkmode.png" alt="user_image" id="profileImage">
+            </div>
+    
+            <div class="userInfoGrid">
+                <h3 id="username"></h3>
+                <h3 id="userEmail"></h3>
+            </div>
+        
+            <hr>
+            
+            <div class="leaderboard">
+                <!-- Stores upvote values and downvotes as per the leaderboard values -->
+                <h3>Leaderboard rank</h3>
+                <h2 id="rank"></h2>
+                <table>
+                    <tr> 
+                        <td>Your upvotes : </td> 
+                        <td id="upvotes"></td>
+                    </tr>
+                </table>
+            </div>
+    
+        </div>
+    
+        <!-- Description and education cards of the page -->
+        <div id="rightProfile">
+            <!-- Description card -->
+            <div class="card descriptionCard">
+                <p>Bio </p>
+                <textarea name="bioTA" id="bio" readonly></textarea>
+                <br>
+                <!-- Edit btn -->
+<!--                <button id="editBtn" onclick="enableEditing()">Edit</button>
+                <button id="updateBtn" onclick="updateProfile()">Update</button>-->
+            </div>
+        
+            <!-- Education card -->
+            <div class="card eduCard">
+                <p>Education background</p>
+                <label>School/ University name </label>
+                <input type="text" id="school" readonly>
+                <br>
+                <label>Course/ Programme studying </label>
+                <input type="text" id="course" readonly>
+                <br>
+                <!-- Edit btn -->
+                <button id="editBtn" onclick="enableEditing()">Edit Profile</button>
+                <button id="updateBtn" onclick="updateProfile()">Update</button>
+                <p id="message"></p>
+            </div>
+        </div>
+
+        <div class="card lastRightCard">
+            <!-- Displays the groups the user is in from the database -->
+            <h3>Groups in: </h3>
+            <ul id="group-list">
+                <!-- List of groups filled from the groups database of the user -->
+            </ul>
+        </div>
+    </div>
+    
+
+    <footer>
+
+    </footer>
+    <script src="/js/config.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>

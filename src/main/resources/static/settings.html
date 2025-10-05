@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carme&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gg-sans-2" rel="stylesheet">
+    <title>Settings</title>
+</head>
+<body>
+    <nav class="nav">
+        <button onclick="goHome()">
+            <img src="/images/xout.png" class="x" alt="exit">
+        </button>
+
+        <div id="navv">
+            <img class="sett" src = "/images/settingscog.png" alt="settings cog image">
+            <span class="settings">Settings</span>
+        </div>
+        <img src="/images/lamp-dark.png" alt="Lamp" class="lamp" onclick="toggleMode()" />
+    </nav>
+
+        <aside class="sidebar">
+            <div class="sidecon">
+                <h1 class = "details" onclick="showDetails()">User Details</h1>
+                <div id ="detail-bar" class="detail-bar"></div>
+            </div>
+            <hr>
+
+            <div class="sidecon">
+                <h1 class = "details" id="imp" onclick="showImportant()">Important</h1>
+                <div id="important-bar" class="important-bar"></div>
+            </div>
+            
+        </aside>
+    <div id="important">
+        <div class="imp-div">
+            <h2 id="warning">WARNING</h2>
+            <span id = "warningtext">This action is permanent and cannot be undone. Deleting your account will erase all your data forever</span>
+            <button id="delete" onclick="openDelete()">Delete your account</button>
+
+        </div>
+
+    </div>  
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+          <button class="close-button" id="closePopup">×</button>
+          <h2 class="popup-title">Change your password</h2>
+
+          <div class="input-group">
+            <label class="input-label" for="oldPassword">Enter your current password</label>
+            <input type="text" class="input-field" id="oldPassword" placeholder="...">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="newPassword">Enter your new password</label>
+            <input type="email" class="input-field" id="newPassword" placeholder="...">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="newPasswordTwo">Re-enter your new password</label>
+            <input type="text" class="input-field" id="newPasswordTwo" placeholder="...">
+          </div>
+
+          <button class="submit-button" id="submitButton" onclick="checkPass()">Submit</button>
+        </div>
+      </div>
+    
+    <div class="popup-overlay" id="emailOverlay">
+        <div class="popup-container">
+          <button class="close-button" id="closeEmail">×</button>
+          <h2 class="popup-title">Want to change your email?</h2>
+
+
+          <button class="email-button" id="submitButton" onclick="email()">Send verification code</button>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="changeEmailOverlay">
+        <div class="emailpopup-container">
+          <button class="close-button" id="closeChangeEmail" onclick="closeChangeEmail()">×</button>
+          <h2 class="popup-title">Want to change your email?</h2>
+
+          <div class="input-group">
+            <label class="input-label" for="code">Enter the code</label>
+            <input type="text" class="input-field" id="code" placeholder="...">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="newEmail">Enter your new email!</label>
+            <input type="text" class="input-field" id="newEmail" placeholder="...">
+          </div>
+          <label id="errorMsg"></label>
+          <button class="changeEmail-button" id="submitButton" onclick="checkCode()">Submit</button>
+        </div>
+      </div>
+    
+    <div class="popup-overlay" id="changeUsernameOverlay">
+        <div class="usernamepopup-container">
+          <button class="close-button" id="closeChangeUsername" onclick="closeUsername()">×</button>
+          <h2 class="popup-title">Want to change your username?</h2>
+
+          <div class="input-group">
+            <label class="input-label" for="newUsername">Enter your new username</label>
+            <input type="text" class="input-field" id="newUsername" placeholder="...">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="pass">Enter your current password</label>
+            <input type="text" class="input-field" id="pass" placeholder="...">
+          </div>
+          <label id="errorMesg"></label>
+          <button class="changeEmail-button" id="submitButton" onclick="checkPassWithUsername()">Submit</button>
+        </div>
+      </div> 
+    
+    <div class="popup-overlay" id="logoutOverlay">
+        <div id= "logout-container" class="usernamepopup-container">
+          <button class="close-button" id="closeLogout" onclick="closeLogout()">×</button>
+          <h2 class="popup-title">Logout</h2>
+
+          <div class="input-group">
+              <button id="logouttt" onclick="closeLogout()">Cancel</button>
+              <button id="logoutt" onclick="logout()">Log out</button>
+          </div>
+          
+        </div>
+    </div>   
+    <div class="popup-overlay" id="deleteOverlay">
+        <div id= "logout-container" class="usernamepopup-container">
+          <button class="close-button" id="closeLogout" onclick="closeDelete()">×</button>
+          <h2 class="popup-title">Delete account permanently</h2>
+
+          <div class="input-group" id="delete-group">
+              <input type="text" id="deletetxt" placeholder="Enter 'delete'" autocomplete="off">
+              <button id="del" onclick="deleteAccount()">Delete account</button>
+          </div> 
+        </div>
+    </div>    
+    
+    <main id="userdetails">    
+        <div id="security">
+            <span class="sec">  [BetterStudy Secure System] <br>
+                                  We take your privacy seriously. All your personal data is securely stored, and your password is encrypted using industry-standard encryption methods. Only you have access to it.</span>
+        </div>
+
+        <div class="con">
+            <span>Email</span>
+            <input id ="email" type="email" readonly>
+            <button class="edit" id="emailedit" onclick="openEmail()">Edit</button>
+        </div>
+        <div class="con">
+            <span>Username</span>
+            <input id ="username" type="text" readonly>
+            <button class="edit" id="useredit" onclick="openUsername()">Edit</button>
+
+        </div>
+        <div class="con">        
+            <button class="trigger-button" id="openPopup" >Change password</button>
+
+        </div>
+
+        <div class="con">        
+            <button id="logout" onclick="openLogout()">Logout</button>
+
+        </div>
+
+
+    </main>
+            <script src="/js/config.js"></script>
+    <script src="/js/settings.js" defer></script>
+</body>
+</html>

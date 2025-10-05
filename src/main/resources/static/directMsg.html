@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Message</title>
+
+    <!-- CSS styling link -->
+    <link rel="stylesheet" href="css/directMsg.css">
+    
+    <!-- SockJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <!-- STOMP over WebSocket -->
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+        <script src="/js/config.js"></script>
+    <script src="js/directMsg.js" defer></script>
+</head>
+
+<body>
+    <div id="navBar">
+        
+    </div>
+
+    <div class="directChatContainer">
+        <!-- Side bar with the current names of people in the chat -->
+        <!-- List of current chats that updates after every chat is started -->
+        <div class="chatList">
+            <button id="backBtn" onclick="backToMain()">Back</button>
+            <!-- Search  -->
+            <div id="userSearch">
+                <button id="searchUser" onclick="searchUser()">Search</button>
+                <input type="text" placeholder="Search Username" id="searchInput">
+            </div>
+            <h3>MyChats</h3>
+            <ul id="userList">
+                <!--<li onclick="openChatWindow()"></li>-->  
+            </ul>
+          
+        </div>
+    
+        <!-- Chat Section  -->
+        <div class="chatWindow">
+            <!-- Back arrow or btn -->
+            <!-- Username/ Name -->
+            <div class="chatHeader">
+                <h3 id="chattingWith"></h3>   <!-- Name of the person you're chatting  with-->
+            </div> 
+                
+            <!-- Chats -->
+            <div class="chatMessages" id="chatMessages">
+                <!-- structure of the message
+                <div class="sentMsg">
+                    <div class="msgMeta">
+                        <strong>SenderUsername</strong>
+                        <span class="msgTime">TimeSent</span>
+                    </div>
+                    <div class="msgContent">Message Text</div>
+                </div>
+                -->
+            </div>
+
+            <!-- Text/ Input area for the chat -->
+            <div class="messageInput">
+                <input type="text" id="messageInput" placeholder="Enter text here">
+                <!-- Send btn -->
+                <button id="sendText" onclick="sendText()">Send</button>
+            </div>
+        </div>     
+
+    </div>
+</body>
+</html>

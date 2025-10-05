@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel = "stylesheet" href="/css/sendmail.css">
+
+</head>
+<body>
+    <div class="randomdiv">
+        <img class="lamp" src="/images/lamp-light.png" alt="Lamp" onclick="toggleMode()">
+        <img class="backbutton" src="/images/logo-nobg.png">
+        <p class="bigger-text">BetterStudy</p>
+        <div class="main-container">
+            <p class="big-text">Password Recovery</p>
+            
+            <div class="input-container">
+                <input id="emailinput"  class="email" type="email" placeholder="Enter your email">
+                <button id="sendcode" class="button" onclick="email()">Send Code</button>
+            </div>    
+
+            <div class="input-container">
+                <input id="usercode" class="code" type="text" minlength="8" maxlength="9" placeholder="Enter your 8-digit code">
+                <button class="button" onclick="checkCode()">Submit</button>
+
+            </div>
+              <p id="approval"></p>
+        </div>   
+    </div>
+            <script src="/js/config.js"></script>
+    <script src="/js/mail.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>

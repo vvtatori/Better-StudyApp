@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Better Study</title>
+        <link rel="stylesheet" href="/css/blesson.css" />
+        <link rel="icon" type="image/png" href="/images/logo-nobg.png">
+    </head>
+
+    <body>
+        <!-- Landing UI -->
+        <div class="container" id="landing">
+            <header>
+                <a href="home.html"> <img src="/images/logo-nobg.png" alt="Logo" class="logo"/> </a>
+                <img src="/images/lamp-dark.png" alt="Lamp" class="lamp" onclick="toggleMode()" />
+            </header>
+
+            <main>
+                <h1 class="title">Better Study</h1>
+                <p class="motto">Connect. Learn. Succeed.</p>
+
+                <div class="buttons">
+                    <button class="signup" onclick="openSignupPopup()">Sign Up</button>
+                    <button class="login" onclick="openLoginPopup()">Log In</button>
+                </div>
+            </main>
+
+            <!-- Scroll Icon -->
+            <footer>
+                <div class="scroll-arrow" onclick="scrollToStats()">
+                    <img src="/images/scroll-arrow.png" alt="Scroll Down Arrow" class="arrow" />
+                </div>
+            </footer>
+        </div>
+
+        <!-- Stats Section -->
+        <section id="stats">
+            <h2>🌐 Live Stats 📊</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3 id="total-messages">0</h3>
+                    <p>Total Messages Sent</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="messages-24h">0</h3>
+                    <p>Messages Sent in 24 Hours</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="total-posts">0</h3>
+                    <p>Total Posts Created</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="study-sessions">0</h3>
+                    <p>Study Sessions Conducted</p>
+                </div>
+            </div>
+        </section>    
+
+        <div class="popup-overlay" id="signupPopup">
+            <div class="popup-container">
+                <span class="popup-close" onclick="closeSignupPopup()">✕</span>
+                <h2 class="popup-title">Sign Up for BetterStudy</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <input type="text" id="email" placeholder="Email address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" placeholder="Username">
+                    </div>                    
+                    <button type="submit" class="signup-btn">Sign up!</button>
+                    <p id="signup-error"></p>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Login Popup -->
+        <div class="popup-overlay" id="loginPopup">
+            <div class="popup-container">
+                <span class="popup-close" onclick="closeLoginPopup()">✕</span>
+                <h2 class="popup-title">Log in</h2>
+                <form action="/api/login" id="loginForm" method="post">
+                    <div class="form-group">
+                        <input type="text" id="login-username" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" name="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                    <a class="reset-link" href="http://localhost:8080/sendmail.html">Forgot your password?</a>
+                    <p id="login-error"></p>
+                </form>
+            </div>
+        </div>  
+
+        <!-- Website Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <p>&copy; 2025 <span class="brand">BetterStudy</span></p>
+                <p>All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <img src="/images/logo-nobg.png" alt="Book" class="icon" />
+                <div class="links">
+                    <a href="/about.html">About</a>
+                    <a href="/policies.html">Policies</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/x23756575/TeamProject" target="_blank"> <img src="github.png" alt="GitHub" class="icon"/> </a>
+                <a onclick="scrollToLanding()" href="#"> <img src="refresh.png" alt="Other" class="icon" /> </a>
+            </div>
+        </footer>
+        <script src="/js/config.js"></script>
+        <script src="/js/landing.js"></script>
+    </body>
+</html>

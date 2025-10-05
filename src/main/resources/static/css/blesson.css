@@ -1,0 +1,583 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E22;
+  color: #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+/* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+/* Hide Scrollbar*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Default Dark Mode */
+body:not(.light-mode) {
+  background: url("/images/background-img-dark.png") no-repeat center center fixed;
+  background-size: cover;
+  transition: background 0.5s ease;
+}
+
+/* Light Mode */
+body.light-mode {
+  background: url("/images/background-img-light.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: white;
+  color: black;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar - Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 90%;
+  position: absolute;
+  top: 0;
+}
+
+/* Images */
+.logo {
+  width: 50px;
+  background-color: transparent;
+}
+
+.lamp {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Title and Motto */
+h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  transition: color 0.5s ease;
+}
+
+.motto {
+  font-size: 1.2em;
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px 30px;
+  margin: 10px;
+  border: 2px solid;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s, background 0.5s ease, color 0.5s ease;
+}
+
+.signup {
+  border-color: #357edd;
+  font-family: monospace;
+}
+
+.signup:hover {
+  background-color: #357edd;
+}
+
+.goback {
+  border-color: #f03434;
+  font-family: monospace;
+}
+
+.goback:hover {
+  background-color: #fb322f;
+}
+
+.login {
+  border-color: #aaaaaa;
+  font-family: monospace;
+}
+
+.login:hover {
+  background-color: #aaaaaa;
+}
+
+/* Light Mode - Buttons */
+body.light-mode button {
+  color: black;
+  border-color: black;
+}
+
+body.light-mode .signup:hover {
+  background-color: #357edd;
+  color: white;
+}
+
+body.light-mode .signup {
+  border-color: #357edd;
+}
+
+body.light-mode .login:hover {
+  background-color: #aaaaaa;
+  color: white;
+}
+
+body.light-mode .goback:hover {
+  background-color: #ef3219;
+  color: white;
+}
+
+body.light-mode .goback {
+  border-color: #f13928;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 49%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.arrow {
+  width: 36px; 
+  height: auto;
+  animation: arrowBounce 2s infinite;
+}
+
+
+/* Stats Section */
+#stats {
+  background-color: #282c34;
+  padding: 50px;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 200px;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.stat-box h3 {
+  font-size: 2em;
+  margin: 0;
+  color: #57a0ff;
+  transition: color 0.5s ease;
+}
+
+.stat-box p {
+  font-size: 1em;
+  margin: 5px 0 0;
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+
+/* Light Mode - Stats */
+body.light-mode #stats {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+body.light-mode .stat-box {
+  background: #ddd;
+  color: black;
+}
+
+body.light-mode .stat-box h3 {
+  color: #357edd;
+}
+
+body.light-mode .stat-box p {
+  color: black;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: #1E1E22;
+  color: #ffffff;          
+  justify-content: center; /* Centers footer elements */
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-left, 
+.footer-center, 
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Light Mode - Footer */
+body.light-mode .footer {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .links a {
+  color: black;
+}
+
+body.light-mode .links a:hover {
+  color: #357edd;
+}
+
+/* Animation upon load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation to all Elements */
+.title, .motto, .buttons, .scroll-arrow, .stats-container, .footer {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Delay animation */
+.motto {
+  animation-delay: 0.3s;
+}
+
+.buttons {
+  animation-delay: 0.5s;
+}
+
+.scroll-arrow {
+  animation-delay: 0.7s;
+}
+
+.stats-container {
+  animation-delay: 1s;
+}
+
+.footer {
+  animation-delay: 1.2s;
+}
+
+/* Policy Section */
+.policy {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  height: auto;
+  max-height: 80vh;
+  text-align: left;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Light mode - Policy */
+body.light-mode .policy {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+/* About Page */
+.about-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+.about-content {
+  margin-bottom: 30px;
+}
+
+.about-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #57a0ff;
+}
+
+.about-content p, .about-content ul {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.about-content ul {
+  padding-left: 20px;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+
+body.light-mode .about-section {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+body.light-mode .about-content p, 
+body.light-mode .about-content ul {
+  color: black;
+}
+
+body.light-mode .about-content h2 {
+  color: #357edd;
+}
+
+/* Buttons */
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.goback {
+  background: transparent;
+  color: white;
+  border: 2px solid #f03434;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.goback:hover {
+  background-color: #fb322f;
+}
+
+/* Light Mode */
+body.light-mode .goback {
+  border-color: #f13928;
+  color: black;
+}
+
+body.light-mode .goback:hover {
+  background-color: #ef3219;
+  color: white;
+}
+/* Popup Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Removed the background-color: rgba(0, 0, 0, 0.7); */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-container {
+    background-color: #1e1e22; /* Semi-transparent dark background */
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #357EDD;
+} 
+body.light-mode .popup-container {
+    background-color: #F5F5F7;
+    border: 2px solid #357EDD;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .popup-close {
+    color: #555555;
+}
+
+body.light-mode .popup-title {
+    color: #357EDD;
+}
+
+body.light-mode .form-group label {
+    color: #444444;
+}
+
+body.light-mode .form-group input {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+
+body.light-mode .signup-btn,
+body.light-mode .login-btn {
+    background-color: #357EDD;
+    color: white;
+}
+
+body.light-mode .signup-btn:hover,
+body.light-mode .login-btn:hover {
+    background-color: #2A6BBB;
+}
+            .popup-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                font-size: 24px;
+                cursor: pointer;
+                font-weight: bold;
+                color: #777;
+            }
+            .popup-title {
+                margin-top: 0;
+                margin-bottom: 20px;
+                color: #357EDD;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #AAAAAA;
+            }
+            
+            .form-group input {
+                background-color: #474751;
+                width: 100%;
+                padding: 10px;
+                border:none;
+                border-radius: 4px;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+            
+            .signup-btn, .login-btn {
+                width: 80%;
+                padding: 12px;
+                background-color: #357EDD;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            ::placeholder {
+              color: #b1b1b1;
+              opacity: 1;
+              font-size: 14px; 
+            }
+
+            ::-ms-input-placeholder {
+               color: #b1b1b1;
+              font-size: 14px;
+            }            
+            .signup-btn:hover,  .login-btn:hover{
+                background-color: #1a529c;
+            }
+            
+            /* Dark mode styles would go here */
+            .dark-mode .popup-container {
+                background-color: #333;
+                color: #fff;
+            }
+            
+            .dark-mode .popup-title {
+                color: #fff;
+            }
+            
+            .dark-mode .form-group label {
+                color: #ddd;
+            }
+            
+            .dark-mode .form-group input {
+                background-color: #444;
+                border-color: #555;
+                color: #fff;
+            }
+            
+            .reset-link{
+                color:#357EDD;
+            }
+            .reset-link:visited{
+                color:#357EDD;
+            }
+            .reset-link:active{
+                color:#357EDD;
+            }

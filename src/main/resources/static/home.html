@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/css/style.css" as="style"><!--for performance-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
+
+    <title>Home</title>
+</head>
+<body>
+    <nav class="sevenpx">
+        <a class="iconlink" href = profile.html>
+            <img class="icon" src = "/images/darkmode.png">
+        </a> 
+        <a href="directMsg.html">Direct messages</a>
+        <button onclick="openPostPopup()">Create post</button>
+        <img src="/images/lamp-dark.png" alt="Lamp" class="lamp" onclick="toggleMode()" />
+        <img src="/images/settingscog.png" class="cog" alt="settings cog" onclick="goSettings()"/>
+    </nav>
+    <nav class="otherpx">
+        <a class="iconlink" href = profile.html>
+            <img class="icon" src = "/images/darkmode.png">
+        </a>
+        <a class="links" href="directMsg.html">Direct messages</a>
+        <a class="links" href="/groups.html">Groups</a>
+        <button onclick="openPostPopup()">Create post</button>
+        <img src="/images/lamp-dark.png" alt="Lamp" class="lamp" onclick="toggleMode()" />     
+        <img src="/images/settingscog.png" class="cog" alt="settings cog" onclick="goSettings()"/>
+    </nav> 
+        <div class="popup-overlay" id="createPostPopup">
+            <div class="popup-container">
+                <span class="popup-close" onclick="closePostPopup()">✕</span>
+                <h2 class="popup-title">Connect with your friends</h2>
+                <form id="createPost">
+                    <div class="form-group">
+                        <input type="text" id="postText" placeholder="Whats on your mind?">
+                    </div>
+                    <div class="form-group">
+                        <label for="postImage">Upload an image</label>
+                        <input type="file" id="postImage" name="image" accept="image/*">
+                    </div>
+                    
+                    <button type="submit" class="signup-btn" onclick="createPost()">Create post</button>
+                    <p id="post-error"></p>
+                </form>
+            </div>
+        </div>
+<!--        <div id="search-bar" class="search">
+            <input type="text" id="messageInput" class="searchTerm" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton" onclick="displayGroups()">Search
+            </button>
+        </div>      -->
+    <aside>
+        <h1>Leaderboard</h1>
+        <ul class="list" id="list"></ul>
+
+    </aside>
+    <main>
+        <div class="main-container">
+            <div class="post" id="post-list">
+                
+            </div>
+        </div>
+    </main>
+        <div class="popup-overlay" id="createGroupPopup">
+            <div class="popup-container">
+                <span class="popup-close" onclick="closeCreatePopup()">✕</span>
+                <h2 class="popup-title">Connect with your friends</h2>
+                <form id="createGroup">
+                    <div class="form-group">
+                        <input type="text" id="groupname" maxlength="14" placeholder="enter a name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="category" maxlength="14"  placeholder="enter a category">
+                    </div>
+                    <div class="form-group">
+                        <label for="public">Public group</label>                        
+                        <input type="checkbox" id="public">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="private">Private group</label>                        
+                        <input type="checkbox" id="private">
+                    </div>
+                    
+                    <button type="submit" class="signup-btn" onclick="creategroup()">Connect now</button>
+                    <p id="group-error"></p>
+                </form>
+            </div>
+        </div>
+
+    <aside>
+        <h1 id ="grouptext">Groups</h1>
+        <div class="groups">
+            <ul id="group-list" class ="groupcss"></ul>
+
+        </div>
+    </aside>
+<!--to make a flip container for direct/group messaging <aside>
+        <h1 id ="grouptext">Groups</h1>
+        <div class="groups">
+            <ul id="group-list" class ="groupcss"></ul>
+
+        </div>
+    </aside>    -->
+    <script src="/js/config.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/app.js" defer></script>    
+</body>
+</html>

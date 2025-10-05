@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/joingroup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+<body>
+    <nav class="sevenpx">
+        <div class="backandgroups">
+            <button class="back-button" onclick = "switchWindow()">&larr;</button>    
+
+            
+        </div>        
+        <div class="wrap">
+            <div class="search">
+                <input type="text" id="messageInput" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton" onclick="displayGroups()">Search
+                    
+                </button>
+            </div>
+        </div> 
+        <img src="/images/lamp-dark.png" alt="Lamp" class="lamp" onclick="toggleMode()" />
+    </nav>    
+    <main>
+
+        <div class="main-container">
+            <div id="public-groups" class="public">
+                <ul id="public-list"></ul>
+            </div>
+            
+        </div>
+    </main>
+
+        <script src="/js/config.js"></script>
+    <script src="/js/joingroup.js" defer></script>    
+</body>
+</html>

@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Recoleta';
+    src: url('recoleta-regulardemo.woff2') format('woff2'),
+         url('Recoleta-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+body {
+    font-family: 'Recoleta', serif;
+    background-color: #1E1E22;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "navbar"
+        "main";
+    color: #E0E0E0;
+    transition: all 0.3s ease;       
+}
+html,body{
+    height:100%;
+}
+.lamp {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  position:absolute;
+  top:5px;
+  right:80px;
+  z-index: 1000;
+  transition: all 0.3s ease;    
+}
+body.light-mode body{
+    background-color: #F5F5F7;  
+    transition: all 0.3s ease;
+}
+body.light-mode .main-container{
+ background-color:#F5F5F5;
+ transition: all 0.3s ease;
+}
+body.light-mode nav{
+    background-color:#E0E0E6;
+    transition: all 0.3s ease;
+    
+}
+body.light-mode .jg-li{
+    background-color:#E0E0E6;
+    transition: all 0.3s ease;
+    
+}
+
+body.light-mode .jg{
+    background-color:#98ABF4;
+    transition: all 0.3s ease;
+    
+}
+body.light-mode p{
+    color:black;
+    
+}
+body.light-mode .searchTerm {
+    border: 2px solid #00B4CC;
+    background-color: #FFFFFF;
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .searchTerm:focus {
+    border-color: #00B4CC;
+    background-color: #F0F8FA;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .searchButton {
+    background-color: #00B4CC;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .searchButton:hover {
+    background-color: #0098A6;
+    transition: all 0.3s ease;
+}
+
+body.light-mode{
+    
+}
+body.light-mode{
+    
+}
+body.light-mode{
+    
+}
+body.light-mode{
+    
+}
+.backandgroups {
+    background: none !important;
+    position: absolute;
+    top: 3px;
+    left:5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+} 
+.back-button{
+    background:none;
+    transition: all 0.3s ease;
+}
+nav {
+    background-color: #282C34;
+    grid-area: navbar;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.searchTerm {
+    width: calc(100% - 60px);
+    border: 2px solid #00B4CC;
+    border-radius: 25px 0 0 25px;
+    padding: 12px 18px;
+    height: 45px;
+    outline: none;
+    color: #9DBFAF;
+    background-color: #2C323C;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.searchTerm:focus {
+    border-color: #00B4CC;
+    background-color: #363C44;transition: all 0.3s ease;
+}
+
+.searchButton {
+    width: 90px;
+    height: 45px;
+    background-color: #00B4CC;
+    color: white;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #0098A6;
+    
+}
+
+.searchButton:focus {
+    outline: none;
+}
+
+.main-container {
+    grid-area: main;
+    display: flex;              
+    justify-content: center;    
+    align-items: flex-start;    
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#public-groups {
+    width: 80%;                 
+    max-width: 600px;            
+    padding: 20px;
+    border-radius: 10px;       
+    text-align: center;  
+    transition: all 0.3s ease;
+}
+
+#public-list {
+    list-style-type: none;     
+    padding: 0;                
+    margin: 0;    
+    transition: all 0.3s ease;
+}
+
+.jg-li {
+    text-align: center;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;             
+    border-radius: 8px;
+    background-color: #282C34;
+    transition: all 0.3s ease;
+}
+
+
+button.jg {
+    background-color: #8741A0;  
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.jg:hover {
+   transform: scale(1.2);
+}
+
+li {
+    display: flex;
+    justify-content: space-between; 
+    padding-left: 8px;
+    font-family: 'Recoleta';    
+    font-size: 16px;
+    transition: all 0.3s ease;
+}

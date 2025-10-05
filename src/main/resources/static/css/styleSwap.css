@@ -1,0 +1,819 @@
+/* General Styles */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+
+
+/* Default Dark Mode */
+body:not(.light-mode) {
+  background: url("/images/background-img-dark.png") no-repeat center center fixed;
+  background-size: cover;
+  transition: background 0.5s ease;
+}
+
+/* Light Mode */
+body.light-mode {
+  background: url("/images/background-img-light.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: white;
+  color: black;
+}
+body.light-mode .container{
+    background-color:#dfdfdf
+}
+body.light-mode .post{
+    background-color:#f5f5f5;
+}
+body.light-mode .container{
+    background-color:#dfdfdf
+}
+body.light-mode .container{
+    background-color:#dfdfdf
+}
+body.light-mode .post li{
+    background-color:#bebebe;
+    color:black;
+    
+}
+li{
+    list-style: none;
+    margin: 20px
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y:auto;
+}
+
+.post li {
+    background-color:#686c77;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post li:hover {
+    transform: scale(1.02);
+}
+
+.post img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Container */
+.container {
+    background-color: #2F3136;
+    color: #d8d8d8;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 90%;
+  position: absolute;
+  top: 0;
+}
+
+/* Images */
+.logo {
+  width: 50px;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.lamp {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Main Content */
+h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  transition: color 0.5s ease;
+}
+
+.motto {
+  font-size: 1.2em;
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px 30px;
+  margin: 10px;
+  border: 2px solid;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s, background 0.5s ease, color 0.5s ease;
+}
+
+.signup {
+  border-color: #357edd;
+  font-family: monospace;
+}
+
+.signup:hover {
+  background-color: #357edd;
+}
+
+.goback {
+  border-color: #f03434;
+  font-family: monospace;
+}
+
+.goback:hover {
+  background-color: #fb322f;
+}
+
+.login {
+  border-color: #aaaaaa;
+  font-family: monospace;
+}
+
+.login:hover {
+  background-color: #aaaaaa;
+}
+
+/* Light Mode Adjustments for Buttons */
+body.light-mode button {
+  color: black;
+  border-color: black;
+}
+
+body.light-mode .signup:hover {
+  background-color: #357edd;
+  color: white;
+}
+
+body.light-mode .signup {
+  border-color: #357edd;
+}
+
+body.light-mode .login:hover {
+  background-color: #aaaaaa;
+  color: white;
+}
+
+body.light-mode .goback:hover {
+  background-color: #ef3219;
+  color: white;
+}
+
+body.light-mode .goback {
+  border-color: #f13928;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 49%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.arrow {
+  width: 36px; 
+  height: auto;
+  animation: arrowBounce 2s infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
+
+/* Stats Section */
+#stats {
+  background-color: #282c34;
+  padding: 50px;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.light-mode #stats {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 200px;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.stat-box h3 {
+  font-size: 2em;
+  margin: 0;
+  color: #57a0ff;
+  transition: color 0.5s ease;
+}
+
+.stat-box p {
+  font-size: 1em;
+  margin: 5px 0 0;
+  color: #ccc;
+  transition: color 0.5s ease;
+}
+
+/* Light Mode - Stats */
+body.light-mode .stat-box {
+  background: #ddd;
+  color: black;
+}
+
+body.light-mode .stat-box h3 {
+  color: #357edd;
+}
+
+body.light-mode .stat-box p {
+  color: black;
+}
+
+/* Home Page Styles - Template */
+.homepage{
+  color: antiquewhite;
+}
+
+.homefooter{
+  padding-top: 10%;
+}
+
+.homehead{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10%;
+}
+
+/* fOoter Styles */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: #1E1E22;
+  color: #ffffff;          
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-left, 
+.footer-center, 
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Light Mode - Footer */
+body.light-mode .footer {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode .links a {
+  color: black;
+}
+
+body.light-mode .links a:hover {
+  color: #357edd;
+}
+
+
+/* General Animation for Page Load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply Animation to Elements */
+.title, .motto, .buttons, .scroll-arrow, .stats-container, .footer {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Delay for Different Elements */
+.motto {
+  animation-delay: 0.3s;
+}
+
+.buttons {
+  animation-delay: 0.5s;
+}
+
+.scroll-arrow {
+  animation-delay: 0.7s;
+}
+
+.stats-container {
+  animation-delay: 1s;
+}
+
+.footer {
+  animation-delay: 1.2s;
+}
+
+/* Split-flap flip effect */
+.stat-box h3 {
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.policy {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  height: auto;
+  max-height: 80vh;
+  text-align: left;
+  font-family: monospace;
+  white-space: pre-wrap; /* Keeps line breaks */
+  word-wrap: break-word; /* Ensures long text breaks */
+}
+
+/* Light mode */
+body.light-mode .policy {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: -100px; /* Initially hidden */
+  left: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  transition:  0.3s ease-in-out;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  gap: 70px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.navbar ul li a:hover {
+  color: gray;
+}
+
+
+.menu-button:hover {
+  background: gray;
+}
+
+body.light-mode li a{
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+body.light-mode ::-webkit-scrollbar-track {
+  background: #dfdfdf;
+  border-radius: 10px;
+    
+}
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2D2E2F;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #969696;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #717171;
+  
+}
+
+ /* Popup Container */
+ .popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: white;
+  padding: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  border-radius: 8px;
+  
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+/* Close Button */
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+.close-btn:hover {
+  color: darkred;
+}
+
+/* Form Styling */
+.popup-container .loginh2, .signuph2 {
+  text-align: center;
+  color: #1E1E22;
+  margin-bottom: 20px;
+}
+
+.popup-container input {
+  width: 100%;
+  padding: 10px;
+  margin:10px -5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-container .loginBTN, .signupBTN {
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  padding: -5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.popup-container button:hover {
+  background: gray;
+}
+
+/* Switch Links */
+.switch {
+  text-align: center;
+  color: #1E1E22;
+  margin-top: 10px;
+}
+
+.switch a {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+
+
+.post h3 {
+  margin-right: 250px;
+  margin-bottom: 10px;
+}
+
+/* Sidebar Right (Friends) */
+.sidebar-right {
+  margin-top:100px;
+  width: 250px;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.friends-list {
+  list-style: none;
+  padding: 0;
+}
+
+.friends-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+/* Main Content - Make it scrollable */
+.main-content {
+  width: 100%;
+  margin-top: 70px;
+  margin-right: 270px;
+  height: calc(100vh - 150px); /* Adjust height to leave space for header and footer */
+  padding: 10px;
+}
+
+/* Update the post styling to ensure text wrapping */
+/* Update the post styling to fix horizontal scroll and reduce width */
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: #4C4F58;
+    border-radius: 10px;
+    max-height: 80vh; /* Maintain your height limit */
+    max-width: 600px;
+    width: 95%; /* Slightly less than 100% to ensure no overflow */
+    margin: 0 auto; /* Center the post container */
+    padding: 15px; /* Add some internal padding */
+    box-sizing: border-box;
+}
+
+.post li {
+    background-color: #686c77;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: calc(100% - 10px); /* Subtract some width to prevent potential overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 5px; /* Add margin to prevent touching the container edges */
+}
+
+/* Update main content to match the narrower post width */
+.main-content {
+    overflow-y: hidden;
+    width: auto;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    height: calc(100vh - 150px);
+    padding: 10px;
+    max-width: 600px; /* Match post max-width */
+    overflow-x: hidden; /* Prevent horizontal scrolling at the container*/
+}
+
+.container {
+    background-color: #2F3136;
+    color: #d8d8d8;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;    
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* Create Post Button (Top Left) */
+.post-btn {
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.post-btn:hover {
+  background: gray;
+}
+
+/* Popup */
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: #1E1E22;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+/* Close Button */
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+.close-btn:hover {
+  color: darkred;
+}
+
+/* Popup Inputs */
+.popup-container textarea {
+  width: 80%;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.popup-container input {
+  margin-bottom: 10px;
+  width: 80%;
+}
+.popup-container button {
+  width: 80%;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+   margin-bottom: 5px;
+}
+
+.popup-container button:hover {
+  background: gray;
+}
+
+.delete-btn {
+  background: red;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+
+/* Edit Button */
+.edit-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.edit-btn:hover {
+  background: darkblue;
+}
+.leaderboard{
+    display: flex;
+    justify-content: flex-start;
+    overflow-y: visible;
+    
+}
+.list{
+    height:500px;
+}

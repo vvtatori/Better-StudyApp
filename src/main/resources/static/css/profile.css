@@ -1,0 +1,322 @@
+body {
+    font-family: 'Recoleta', serif;
+    /*background-image: url('/images/massive doodle.png');*/
+    background-color: #1E1E22;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+body.lightMode {
+  background-color: #f4f4f4;
+  color: #1E1E22;
+}
+
+/* Main profile area */
+#profileContainer {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #282C34;
+    padding: 15px 15px 15px 15px;
+    border-radius: 18px;
+    
+}
+
+body.lightMode #profileContainer {
+  background-color: #ffffff;
+}
+/* 350 x 505 */
+
+/* Left section */
+#profileCard {
+    flex: 0.8; /* Reduced width */
+    max-width: 280px; /* Slim width */
+    height: 520px; /* Taller height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #3f4652;
+    border-radius: 5px;
+}
+
+body.lightMode #profileCard {
+  background-color: #e3e3e3;
+}
+
+#profileImageContainer {
+    width: 120px; /* Larger than image */
+    height: 120px; /* Larger than image */
+    border-radius: 50%;
+    background-color: #ddd; /* Light gray background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Adjusts the gap between the image and background */
+    margin-top: 25px;
+    color:lightgrey;
+}
+
+#profileCard img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border-color: #1E1E22;
+}
+
+.userInfoGrid {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr; /*Label takes auto width, value takes remaining space */
+    gap: 5px 2px; /*Row gap: 10px, Column gap: 20px*/
+    align-items: center; /* Aligns labels and values vertically */
+    width: 100%;
+    max-width: 300px; /* Adjust width as needed */
+    margin-top: 15px;
+}
+
+.userInfoGrid h2 {
+    text-align: right;
+    padding-left: 10px;
+    font-size: 15px;
+    
+}
+
+.userInfoGrid h3 {
+    background-color: #1E1E22;;
+    color: antiquewhite;
+    margin: 0px 50px 10px 50px;
+    border-radius: 8px;
+    font-size: 15px;
+} 
+
+body.lightMode .userInfoGrid h3 {
+  background-color: #c0c0c0;
+  color: #1E1E22;
+}
+
+/* Leaderboard */
+.leaderboard img{
+    height: 5px;
+    /* width: 2px; */
+}
+
+.leaderboard {
+    background: #1E1E22;
+    border-radius: 3px;
+    margin: 2px 2px 2px 2px;
+    flex: 1;
+    /* display: flex; */
+    max-width: 250px;
+    margin-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: lightgrey;
+    max-height: 180px;
+}
+
+body.lightMode .leaderboard {
+  background-color: #c0c0c0;
+  color: #1E1E22;
+  border: 1px solid #ccc;
+}
+
+.leaderboard h2 {
+    text-align: center;
+}
+
+.leaderboard td {
+    max-height: 5px;
+    min-width: 30px;
+    max-width: 60px;
+    text-align: center;
+    border-left: 1px dotted lightgray;
+}
+
+/* Middle section */
+#rightProfile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#rightProfile p {
+    font-weight: bold;
+    font-size: larger;
+}
+
+#bio {
+    max-width: 315px;
+    max-height: 120px;
+    min-width: 310px;
+    min-height: 120px;
+    border-radius: 6px;
+    background-color: #ddd;;
+}
+
+.eduCard input {
+    width: 315px;
+    height: 25px;
+    border: solid black 1px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background-color: #ddd;;
+}
+
+body.lightMode .eduCard input,
+body.lightMode #bio {
+  background-color: #f0f0f0;
+  color: #1E1E22;
+}
+
+.eduCard label {
+    font-weight: lighter;
+    color: lightgray;
+}
+
+body.lightMode .eduCard label {
+  color: #333;
+}
+
+/* Right section */
+.lastRightCard {
+    flex: 0.8; /* Adjust size as needed */
+    min-width: 220px;
+    height: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background: #3f4652;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.lightMode .card {
+  background-color: #e3e3e3;
+  color: #1E1E22;
+}
+
+button {
+    background: rgb(57, 56, 56);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline;
+}
+
+body.lightMode button {
+  background-color: #dddddd;
+  color: #1E1E22;
+}
+
+button:hover {
+    background: rgb(25, 23, 23);
+}
+
+body.lightMode button:hover {
+  background-color: #c0c0c0;
+}
+
+/*Back button*/
+#backToHome{
+   display: block;
+   background: gainsboro;
+   color: #1E1E22;
+}
+
+.backHome{
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+}
+
+hr {
+    border: 0.6px solid rgba(0, 0, 0, 0.763);
+    width: 90%;
+}
+#message{
+    bottom:0;
+    right:0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/*    display: inline;
+    font-size: 2px;*/
+}
+#upvotes{
+    color:red;
+}
+
+.themeToggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 999;
+}
+
+#lampToggle {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/*screen responsiveness*/
+@media screen and (max-width: 1024px) {
+  #profileContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #profileCard,
+  #rightProfile,
+  .lastRightCard {
+    width: 100%;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  .eduCard input,
+  #bio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .userInfoGrid {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #backToHome {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  #lampToggle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .eduCard input,
+  #bio {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+}
